@@ -1,0 +1,7 @@
+{
+  "name": "gonini-mob-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
