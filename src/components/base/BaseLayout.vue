@@ -42,3 +42,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+}
+</style>

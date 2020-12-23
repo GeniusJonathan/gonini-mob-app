@@ -54,6 +54,11 @@ import axios from 'axios';
     getters: { 
         allPlayers(state) {
             return state.players;
-        }
+        },
+        getPlayerById(state) {
+            return (id) => {
+              return state.players.find(player => player.id == id);
+            };
+          },
     }
 }
