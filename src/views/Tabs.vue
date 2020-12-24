@@ -9,13 +9,13 @@
           <ion-label>Players</ion-label>
         </ion-tab-button>
           
-        <ion-tab-button tab="tab3" href="/tab2">
+        <ion-tab-button tab="tab3" href="/teams">
           <ion-icon :icon="home" />
           <ion-label>Teams</ion-label>
         </ion-tab-button>
         
         <ion-tab-button tab="tab4" href="/tab3">
-          <ion-icon :icon="logoDribbble" />
+          <ion-icon :icon="calendar" />
           <ion-label>Games</ion-label>
         </ion-tab-button>
 
@@ -31,7 +31,7 @@
 
 <script>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage } from '@ionic/vue';
-import { home, logoDribbble, peopleOutline, menu } from 'ionicons/icons';
+import { home, calendar, peopleOutline, menu } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
@@ -39,7 +39,7 @@ export default {
   setup() {
     return {
       home,
-      logoDribbble, 
+      calendar, 
       peopleOutline, 
       menu,
     }

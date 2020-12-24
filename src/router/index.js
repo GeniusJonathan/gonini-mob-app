@@ -12,15 +12,15 @@ const routes = [
     children: [
       {
         path: '',
-        redirect: '/tabs/players'
+        redirect: '/players'
       },
       {
         path: 'players',
         component: () => import('@/views/PlayersView.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        path: 'teams',
+        component: () => import('@/views/TeamsView.vue')
       },
       {
         path: 'tab3',
@@ -35,6 +35,14 @@ const routes = [
   {
     path: '/players/:id',
     component: () => import('../views/PlayerEditView.vue')
+  },
+  {
+    path: '/teams/add',
+    component: () => import('../views/TeamAddView.vue')
+  },
+  {
+    path: '/teams/:id',
+    component: () => import('../views/TeamEditView.vue')
   },
 ]
 
