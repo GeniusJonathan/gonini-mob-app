@@ -1,11 +1,11 @@
 <template>
-  <base-layout page-title="Team Roster">
+  <base-layout page-title="Games Schedule">
     <template v-slot:actions-end>
-      <ion-button router-link="/teams/add">
+      <ion-button router-link="/games/add">
         <ion-icon slot="icon-only" :icon="add"></ion-icon>
       </ion-button>
     </template>
-    <teams-list :teams="teams"></teams-list>
+    <games-list :games="games"></games-list>
   </base-layout>
 </template>
 
@@ -13,12 +13,12 @@
 import { IonButton, IonIcon } from "@ionic/vue";
 import { add } from "ionicons/icons";
 
-import TeamsList from "../components/teams/TeamsList";
+import GamesList from "../components/games/GamesList";
 
 export default {
-  name: "TeamsView",
+  name: "GamesView",
   components: {
-    TeamsList,
+    GamesList,
     IonButton,
     IonIcon,
   },
@@ -26,22 +26,22 @@ export default {
     return { add };
   },
   computed: {
-    teams() {
+    games() {
       function compare(a, b) {
-        if (a.name < b.name)
+        if (a.id < b.id)
           return -1;
-        if (a.name > b.name)
+        if (a.id > b.id)
           return 1;
         return 0;
       }
 
-      var list = this.$store.getters.allTeams
+      var list = this.$store.getters.allGames
 
       return list.sort(compare);
     },
   },
   created() {
-    this.$store.dispatch("fetchTeams");
+    this.$store.dispatch("fetchGames");
   },
 };
 </script>

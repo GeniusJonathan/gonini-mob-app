@@ -14,7 +14,7 @@
           <ion-label>Teams</ion-label>
         </ion-tab-button>
         
-        <ion-tab-button tab="tab4" href="/tab3">
+        <ion-tab-button tab="tab4" href="/games">
           <ion-icon :icon="calendar" />
           <ion-label>Games</ion-label>
         </ion-tab-button>

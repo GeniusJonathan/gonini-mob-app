@@ -23,8 +23,8 @@ const routes = [
         component: () => import('@/views/TeamsView.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
+        path: 'games',
+        component: () => import('@/views/GamesView.vue')
       }
     ]
   },
@@ -43,6 +43,18 @@ const routes = [
   {
     path: '/teams/:id',
     component: () => import('../views/TeamEditView.vue')
+  },
+  {
+    path: '/games/add',
+    component: () => import('../views/GameAddView.vue')
+  },
+  {
+    path: '/games/edit/:id',
+    component: () => import('../views/GameEditView.vue')
+  },
+  {
+    path: '/games/view/:id',
+    component: () => import('../views/GameDetailsView.vue')
   },
 ]
 
