@@ -25,10 +25,5 @@ export default {
       return this.$store.getters.getGameById(this.gameId);
     },
   },
-  // watch: {
-  //   $route(currentRoute) {
-  //     this.memoryId = currentRoute.params.id;
-  //   },
-  // },
 };
 </script>

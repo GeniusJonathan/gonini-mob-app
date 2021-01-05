@@ -3,7 +3,7 @@ import axios from 'axios';
  export const gamesModule = {
     state() {
         return {
-            games: [],
+            games: []
         }
     },
     mutations: { 
