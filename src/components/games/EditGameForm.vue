@@ -108,10 +108,6 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.time);
-      console.log(new Date(this.time));
-      console.log( new Date(this.time).toLocaleTimeString("en-GB").substring(0, 5));
-
       const gameData = {
         id: this.loadedGame.id,
         homeTeamId: this.homeTeamId,
@@ -133,7 +129,6 @@ export default {
     convertDateString(dateString) {
       var dateParts = dateString.split("/");
       var dateObject = dateParts[2] + "-" + dateParts[1] + "-" + (dateParts[0]);
-      console.log(dateObject)
       return dateObject;
     },
     convertBooleanToText(booleanValue) {

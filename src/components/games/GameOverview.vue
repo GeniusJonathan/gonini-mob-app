@@ -87,7 +87,6 @@ export default {
       }
     },
     async handleButtonClick(player) {
-      console.log(player);
       const actionSheet = await actionSheetController.create({
         header: 'Modify Availability',
         buttons: [
@@ -119,7 +118,6 @@ export default {
         ]
       });
       await actionSheet.present();
-      console.log(actionSheet);
     },
     
   },
