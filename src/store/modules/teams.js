@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {AppConstants} from '../../constants.js';
 
  export const teamsModule = {
     state() {
@@ -25,28 +26,28 @@ import axios from 'axios';
     actions: { 
         async fetchTeams(context) {
             await axios
-                .get('http://localhost:8080/api/teams')
+                .get(AppConstants.BASE_URL + 'api/teams')
                 .then(res => context.commit('setTeams', res.data))
                 .catch(err => console.log(err + ': Unable to retrieve teams'))
         },
     
         async addTeam(context, team) {
             await axios
-                .post('http://localhost:8080/api/teams', team)
+                .post(AppConstants.BASE_URL + 'api/teams', team)
                 .then(res => context.commit('newTeam', res.data))
                 .catch(err => console.log(err + ': Unable to add new team'))
         },
     
         async updateTeam(context, team) {
             await axios
-                .put(`http://localhost:8080/api/teams/${team.id}`, team)
+                .put(AppConstants.BASE_URL + `api/teams/${team.id}`, team)
                 .then(res => context.commit('editTeam', res.data))
                 .catch(error => console.log(error));
         },
     
         async deleteTeam(context, id) {
             await axios
-            .delete(`http://localhost:8080/api/teams/${id}`)
+            .delete(AppConstants.BASE_URL + `api/teams/${id}`)
             .then(() => context.commit('removeTeam', id))
             .catch(error => console.log(error));
         }

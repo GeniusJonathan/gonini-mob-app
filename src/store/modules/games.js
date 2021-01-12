@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { AppConstants} from '../../constants.js';
 
  export const gamesModule = {
     state() {
@@ -25,28 +26,28 @@ import axios from 'axios';
     actions: { 
         async fetchGames(context) {
             await axios
-                .get('http://localhost:8080/api/games')
+                .get(AppConstants.BASE_URL + 'api/games')
                 .then(res => context.commit('setGames', res.data))
                 .catch(err => console.log(err + ': Unable to retrieve games'))
         },
     
         async addGame(context, game) {
             await axios
-                .post('http://localhost:8080/api/games', game)
+                .post(AppConstants.BASE_URL + 'api/games', game)
                 .then(res => context.commit('newGame', res.data))
                 .catch(err => console.log(err + ': Unable to add new game'))
         },
     
         async updateGame(context, game) {
             await axios
-                .put(`http://localhost:8080/api/games/${game.id}`, game)
+                .put(AppConstants.BASE_URL + `api/games/${game.id}`, game)
                 .then(res => context.commit('editGame', res.data))
                 .catch(error => console.log(error));
         },
     
         async deleteGame(context, id) {
             await axios
-            .delete(`http://localhost:8080/api/games/${id}`)
+            .delete(AppConstants.BASE_URL + `api/games/${id}`)
             .then(() => context.commit('removeGame', id))
             .catch(error => console.log(error));
         }

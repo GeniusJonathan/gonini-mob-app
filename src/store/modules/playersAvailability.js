@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {AppConstants} from '../../constants.js';
 
  export const playersAvailabilityModule = {
     state() {
@@ -19,7 +20,7 @@ import axios from 'axios';
     actions: { 
         async fetchPlayersAvailability(context, gameId) {
             await axios
-                .get(`http://localhost:8080/api/games/${gameId}/players`)
+                .get(AppConstants.BASE_URL + `api/games/${gameId}/players`)
                 .then(res => context.commit('setPlayersAvailabilitys', res.data))
                 .catch(err => console.log(err + ': Unable to retrieve playersAvailabilitys'))
         },
@@ -29,7 +30,7 @@ import axios from 'axios';
                 status: playerAvailability.status
             };
             await axios
-                .put(`http://localhost:8080/api/games/${playerAvailability.game.id}/players/${playerAvailability.player.id}`, availability)
+                .put(AppConstants.BASE_URL + `api/games/${playerAvailability.game.id}/players/${playerAvailability.player.id}`, availability)
                 .then(res => context.commit('editPlayersAvailability', res.data))
                 .catch(error => console.log(error));
         },

@@ -1,5 +1,5 @@
 <template>
-  <base-layout page-title="Team Roster">
+  <base-layout page-title="Teams">
     <template v-slot:actions-end>
       <ion-button router-link="/teams/add">
         <ion-icon slot="icon-only" :icon="add"></ion-icon>
