@@ -19,7 +19,7 @@
           <ion-label>Games</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="tab1" href="/tab3">
+        <ion-tab-button tab="tab1" href="/more">
           <ion-icon :icon="menu" />
           <ion-label>More</ion-label>
         </ion-tab-button>

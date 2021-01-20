@@ -25,6 +25,10 @@ const routes = [
       {
         path: 'games',
         component: () => import('@/views/GamesView.vue')
+      },
+      {
+        path: 'more',
+        component: () => import('@/views/Tab3.vue')
       }
     ]
   },

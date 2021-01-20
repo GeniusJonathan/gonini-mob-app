@@ -91,7 +91,8 @@ export default {
         date: new Date(this.date).toLocaleDateString("en-GB"),
         time: new Date(this.time).toLocaleTimeString("en-GB").substring(0, 5),
         details: this.details,
-      };
+      }; 
+
       this.$emit("save-game", gameData);
       this.opponent = "";
       this.gameType = "";
@@ -99,6 +100,7 @@ export default {
       this.time = "";
       this.details = "";
     },
+
   },
   computed: {
     teams() {
